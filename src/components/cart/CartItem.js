@@ -19,11 +19,11 @@ const CartItem = (props) => {
             <td>{title}</td>
             <td>{price}</td>
             <td>
-                <button onClick={incrementItem} className="btn btn-outline-dark">
+                <button onClick={incrementItem} className="btn btn-outline-dark" style={{marginRight: '20px'}}>
                     <i className="fa-solid fa-xs fa-plus"></i>
                 </button>
                 {quantity}
-                <button onClick={decrementItem} className="btn btn-outline-dark">
+                <button onClick={decrementItem} className="btn btn-outline-dark" style={{marginLeft: '20px'}}>
                     <i className="fa-solid fa-xs fa-minus"></i>
                 </button>
             </td>

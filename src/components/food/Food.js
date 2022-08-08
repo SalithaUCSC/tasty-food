@@ -1,37 +1,6 @@
 import FoodCard from "./FoodCard";
+import {foodItems} from "./FoodList";
 
-const products = [
-    {
-        id: 1,
-        title: 'Food 1',
-        price: 15
-    },
-    {
-        id: 2,
-        title: 'Food 2',
-        price: 2
-    },
-    {
-        id: 3,
-        title: 'Food 3',
-        price: 10
-    },
-    {
-        id: 4,
-        title: 'product 4',
-        price: 20
-    },
-    {
-        id: 5,
-        title: 'product 5',
-        price: 5
-    },
-    {
-        id: 6,
-        title: 'Food 6',
-        price: 6
-    }
-]
 const Food = () => {
     return (
         <div className="container food-wrapper">
@@ -39,7 +8,7 @@ const Food = () => {
             <hr/><br/>
             <div className="row">
                 {
-                    products.map((item, index) => (
+                    foodItems.map((item, index) => (
                         <FoodCard item={item} key={index}/>
                     ))
                 }
