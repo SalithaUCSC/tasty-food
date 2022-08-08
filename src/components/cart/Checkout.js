@@ -2,9 +2,11 @@ import {useSelector} from "react-redux";
 
 const Checkout = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
-    console.log(cartItems)
     const totalAmount = useSelector(state => state.cart.totalAmount);
     const totalQuantity = useSelector(state => state.cart.totalQuantity);
+    const submitForm = (e) => {
+        e.preventDefault();
+    }
     return (
         <div className="container">
             <h3>Checkout</h3>
@@ -66,7 +68,7 @@ const Checkout = () => {
                                 <label htmlFor="country" className="form-label">Country</label>
                                 <input type="text" className="form-control" id="country" placeholder="" required=""/>
                             </div>
-                            <button className="btn btn-primary">Submit</button>
+                            <button onClick={submitForm} className="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>
