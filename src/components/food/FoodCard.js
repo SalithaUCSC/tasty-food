@@ -4,10 +4,10 @@ import FoodImg from "../../assets/pizza.png";
 import {Link} from "react-router-dom";
 
 const FoodCard = (props) => {
-    const { id, title, price, category, description } = props.item
+    const { id, title, price} = props.item
     const dispatch  = useDispatch();
     const addToCart = () => {
-        dispatch(cartActions.addItem({id, title, price, category, description}))
+        dispatch(cartActions.addItem({id, title, price}))
     }
     return (
         <div className="col-lg-3" style={{marginBottom: "20px"}}>

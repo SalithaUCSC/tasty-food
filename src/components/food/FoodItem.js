@@ -10,7 +10,7 @@ const FoodItem = () => {
     const {title, price, category, description} = food;
     const dispatch  = useDispatch();
     const addToCart = () => {
-        dispatch(cartActions.addItem({id, title, price, category, description}))
+        dispatch(cartActions.addItem({id, title, price}))
     }
     return (
         <div className="container">

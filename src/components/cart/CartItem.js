@@ -2,10 +2,10 @@ import {useDispatch} from "react-redux";
 import {cartActions} from "../../features/cart/CartSlice";
 
 const CartItem = (props) => {
-    const { id, title, price, quantity, category, description, totalPrice } = props.item
+    const { id, title, price, quantity, totalPrice } = props.item
     const dispatch = useDispatch();
     const incrementItem = () => {
-        dispatch(cartActions.addItem({id, title, price, category, description}))
+        dispatch(cartActions.addItem({id, title, price}))
     }
     const decrementItem = () => {
         dispatch(cartActions.removeItem(id))
