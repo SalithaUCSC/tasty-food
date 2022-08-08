@@ -49,6 +49,11 @@ const cartSlice = createSlice({
                 state.totalQuantity = state.totalQuantity - existingItem.quantity;
             }
             state.totalAmount = getTotal(state.cartItems)
+        },
+        clear(state) {
+            state.cartItems = [];
+            state.totalQuantity = 0;
+            state.totalAmount = 0;
         }
     }
 })
