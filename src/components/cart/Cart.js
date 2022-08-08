@@ -11,7 +11,7 @@ const Cart = () => {
             <hr/><br/>
             {
                 items.length > 0 ?
-                    <table class="table table-striped">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
@@ -24,7 +24,7 @@ const Cart = () => {
                         <tbody>
                             {
                                 items.map((cItem, index) => (
-                                    <CartItem item={cItem}/>
+                                    <CartItem item={cItem} key={index}/>
                                 ))
                             }
                         </tbody>
