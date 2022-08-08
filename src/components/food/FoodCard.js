@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { cartActions } from "../../features/shopping-cart/CartSlice";
+import { cartActions } from "../../features/cart/CartSlice";
 
 const FoodCard = (props) => {
     const { id, title, price } = props.item
