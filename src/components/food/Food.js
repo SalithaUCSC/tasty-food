@@ -3,17 +3,17 @@ import FoodCard from "./FoodCard";
 const products = [
     {
         id: 1,
-        title: 'product 1',
+        title: 'Food 1',
         price: 15
     },
     {
         id: 2,
-        title: 'product 2',
+        title: 'Food 2',
         price: 2
     },
     {
         id: 3,
-        title: 'product 3',
+        title: 'Food 3',
         price: 10
     },
     {
@@ -28,7 +28,7 @@ const products = [
     },
     {
         id: 6,
-        title: 'product 6',
+        title: 'Food 6',
         price: 6
     }
 ]

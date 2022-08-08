@@ -40,6 +40,15 @@ const cartSlice = createSlice({
                 existingItem.totalPrice = Number(existingItem.totalPrice) - Number(existingItem.price);
             }
             state.totalAmount = getTotal(state.cartItems)
+        },
+        deleteItem(state, action) {
+            const id = action.payload;
+            const existingItem = state.cartItems.find(item => item.id === id);
+            if (existingItem) {
+                state.cartItems = state.cartItems.filter(item => item.id !== id);
+                state.totalQuantity = state.totalQuantity - existingItem.quantity;
+            }
+            state.totalAmount = getTotal(state.cartItems)
         }
     }
 })

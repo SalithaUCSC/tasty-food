@@ -19,6 +19,7 @@ const Cart = () => {
                             <th scope="col">Unit Price</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Total Price</th>
+                            <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,11 +34,15 @@ const Cart = () => {
             }
             {
                 items.length > 0 ?
-                    <div>
-                        <br/>
-                        Total Items Count: {totalQuantity}
-                        <br/>
-                        Cart Total: {totalAmount}
+                    <div className="container" style={{marginTop: '50px'}}>
+                        <div className="row">
+                            <div className="col-lg-8"></div>
+                            <div className="col-lg-4" style={{textAlign: 'right'}}>
+                                <h4>Total Items: {totalQuantity}</h4>
+                                <br/>
+                                <h3>Total: {totalAmount}</h3>
+                            </div>
+                        </div>
                     </div> 
                 : ''
             }
