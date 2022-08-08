@@ -13,7 +13,7 @@ const cartSlice = createSlice({
     reducers: {
         addItem(state, action) {
             const newItem = action.payload;
-            const existingItem = state.cartItems.find(item => item.id === newItem.id);
+            const existingItem = state.cartItems.find(item => item.id === Number(newItem.id));
             state.totalQuantity++;
             if (!existingItem) {
                 state.cartItems.push({
@@ -31,10 +31,10 @@ const cartSlice = createSlice({
         },
         removeItem(state, action) {
             const id = action.payload;
-            const existingItem = state.cartItems.find(item => item.id === id);
+            const existingItem = state.cartItems.find(item => item.id === Number(id));
             state.totalQuantity--;
             if (existingItem.quantity === 1) {
-                state.cartItems = state.cartItems.filter(item => item.id !== id);
+                state.cartItems = state.cartItems.filter(item => item.id !== Number(id));
             } else {
                 existingItem.quantity--;
                 existingItem.totalPrice = Number(existingItem.totalPrice) - Number(existingItem.price);
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
             }
             state.totalAmount = getTotal(state.cartItems)
         },
-        clear(state) {
+        clear(state, action) {
             state.cartItems = [];
             state.totalQuantity = 0;
             state.totalAmount = 0;

@@ -8,7 +8,7 @@ const Cart = () => {
     const totalAmount = useSelector(state => state.cart.totalAmount)
     const dispatch = useDispatch();
     const clearCart = () => {
-        dispatch(cartActions.clear())
+        dispatch(cartActions.clear({}))
     }
     return (
         <div className="container">

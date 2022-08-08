@@ -6,13 +6,11 @@ import {cartActions} from "../../features/cart/CartSlice";
 
 const FoodItem = () => {
     let {id} = useParams();
-    const food = foodItems.find(item => item.id === parseInt(id));
+    const food = foodItems.find(item => item.id === Number(id));
     const {title, price, category, description} = food;
     const dispatch  = useDispatch();
     const addToCart = () => {
-        dispatch(cartActions.addItem({
-            id, title, price
-        }))
+        dispatch(cartActions.addItem({id, title, price, category, description}))
     }
     return (
         <div className="container">
