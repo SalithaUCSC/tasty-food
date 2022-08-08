@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import CartItem from "./CartItem";
 import {cartActions} from "../../features/cart/CartSlice";
+import {Link} from "react-router-dom";
 
 const Cart = () => {
     const items = useSelector(state => state.cart.cartItems)
@@ -42,7 +43,8 @@ const Cart = () => {
                     <div className="container" style={{marginTop: '50px'}}>
                         <div className="row">
                             <div className="col-lg-8">
-                                <button onClick={clearCart} className="btn btn-outline-danger">Clear Cart</button>
+                                <button onClick={clearCart} style={{marginLeft: '-10px', marginRight: '10px'}} className="btn btn-outline-danger">Clear Cart</button>
+                                <Link to={"/checkout"} className="btn btn-outline-primary">Checkout</Link>
                             </div>
                             <div className="col-lg-4" style={{textAlign: 'right'}}>
                                 <h4>Total Items: {totalQuantity}</h4>
